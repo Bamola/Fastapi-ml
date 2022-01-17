@@ -11,8 +11,8 @@ ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
 COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
-RUN python -m spacy download en_core_web_sm
+RUN python -m pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host github.com  -r requirements.txt
+# RUN python -m spacy download en_core_web_sm
 WORKDIR /app
 COPY . /app
 
